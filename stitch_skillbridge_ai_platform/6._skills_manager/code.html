@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillBridge AI - Skills Manager</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-background": "#191b23",
+                "surface-container": "#ededf9",
+                "on-tertiary": "#ffffff",
+                "secondary-container": "#dae2fd",
+                "on-tertiary-fixed": "#360f00",
+                "surface-container-high": "#e7e7f3",
+                "inverse-surface": "#2e3039",
+                "tertiary": "#943700",
+                "primary-fixed": "#dbe1ff",
+                "on-surface-variant": "#434655",
+                "on-secondary-container": "#5c647a",
+                "surface-container-low": "#f3f3fe",
+                "on-secondary-fixed": "#131b2e",
+                "on-secondary": "#ffffff",
+                "primary-fixed-dim": "#b4c5ff",
+                "error": "#ba1a1a",
+                "tertiary-container": "#bc4800",
+                "on-error-container": "#93000a",
+                "error-container": "#ffdad6",
+                "surface-variant": "#e1e2ed",
+                "on-primary-container": "#eeefff",
+                "secondary-fixed": "#dae2fd",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed-variant": "#7d2d00",
+                "on-primary-fixed": "#00174b",
+                "inverse-primary": "#b4c5ff",
+                "primary": "#004ac6",
+                "secondary-fixed-dim": "#bec6e0",
+                "surface-tint": "#0053db",
+                "tertiary-fixed-dim": "#ffb596",
+                "on-primary-fixed-variant": "#003ea8",
+                "on-error": "#ffffff",
+                "outline-variant": "#c3c6d7",
+                "tertiary-fixed": "#ffdbcd",
+                "on-secondary-fixed-variant": "#3f465c",
+                "on-primary": "#ffffff",
+                "on-tertiary-container": "#ffede6",
+                "surface-container-highest": "#e1e2ed",
+                "secondary": "#565e74",
+                "surface-bright": "#faf8ff",
+                "outline": "#737686",
+                "surface": "#faf8ff",
+                "primary-container": "#2563eb",
+                "on-surface": "#191b23",
+                "background": "#faf8ff",
+                "surface-dim": "#d9d9e5",
+                "inverse-on-surface": "#f0f0fb"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "unit": "4px",
+                "sm": "8px",
+                "container-max": "1280px",
+                "2xl": "48px",
+                "xs": "4px",
+                "md": "16px",
+                "gutter": "24px",
+                "xl": "32px",
+                "lg": "24px",
+                "3xl": "64px"
+            },
+            "fontFamily": {
+                "label-md": ["Inter"],
+                "headline-sm": ["Inter"],
+                "body-sm": ["Inter"],
+                "display": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-lg-mobile": ["Inter"],
+                "body-md": ["Inter"],
+                "label-sm": ["Inter"],
+                "headline-lg": ["Inter"],
+                "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #F8FAFC;
+            color: #191b23;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .skill-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 4px 12px rgba(15, 23, 42, 0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E2E8F0;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-lg h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary-container flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young female tech professional with a friendly smile, set against a clean, softly lit office background with a corporate modern aesthetic. The lighting is bright and even, highlighting her confident expression, wearing a navy blue blazer that matches the primary brand colors. High-quality portrait photography with a shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjzcegqRZMDucfshgAe26ZVJ9K83QiJKD9kvR3JKZ84z5oAp3JYrwsGdIqjdxcOs0gqUxSypn2CYxXtcF0BibvOpfX-xBzERT-HnyFaQo_Y0WAQWuo8Fqswl7Xw9WVjj5Z_-ctdnJLylCYvorEjqNvt8i5AqnEcI0Ozh-mqJw5ubNlFh-sUTlG-lF88LtkaJukGJcea2LDgMPVfYHltwT1n6tdGWbwaPuuELXidu1HAReGDxsbzwVPSTxK8A8N3QBGi3GOzWOQ018w"/>
+</div>
+<h1 class="text-headline-sm font-headline-sm font-bold text-primary">SkillBridge AI</h1>
+</div>
+<div class="flex items-center gap-sm">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-24 pb-32 px-md md:px-lg max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<section class="mb-xl flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-background">Skills Inventory</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-xs">Manage and track your professional evolution.</p>
+</div>
+<button class="flex items-center justify-center gap-sm bg-primary-container text-on-primary-container px-lg py-md rounded-lg font-label-md text-label-md hover:opacity-80 transition-all shadow-sm" onclick="openModal()">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 600">add</span>
+                Add New Skill
+            </button>
+</section>
+<!-- Stats Overview (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-md mb-xl">
+<div class="md:col-span-1 bg-surface-container-lowest border border-outline-variant p-lg rounded-xl shadow-sm">
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Total Skills</p>
+<p class="text-display font-display text-primary mt-sm">24</p>
+</div>
+<div class="md:col-span-1 bg-surface-container-lowest border border-outline-variant p-lg rounded-xl shadow-sm">
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Advanced</p>
+<p class="text-display font-display text-on-background mt-sm">8</p>
+</div>
+<div class="md:col-span-2 relative overflow-hidden bg-primary p-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div class="relative z-10">
+<p class="text-label-sm font-label-sm text-primary-fixed-dim uppercase tracking-wider">Career Path Progression</p>
+<p class="text-headline-md font-headline-md text-white mt-xs">Senior Technical Product Lead</p>
+</div>
+<div class="w-full bg-white/20 h-2 rounded-full mt-lg relative z-10">
+<div class="bg-white h-full rounded-full w-[65%]"></div>
+</div>
+<!-- Background visual element -->
+<div class="absolute -right-8 -bottom-8 opacity-20 transform rotate-12">
+<span class="material-symbols-outlined text-[120px] text-white">trending_up</span>
+</div>
+</div>
+</section>
+<!-- Filter / Search Row -->
+<div class="flex flex-wrap items-center gap-md mb-lg">
+<div class="relative flex-grow max-w-md">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-xl pr-md py-md bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-body-md" placeholder="Search skills..." type="text"/>
+</div>
+<div class="flex items-center gap-sm">
+<button class="px-md py-sm bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">All</button>
+<button class="px-md py-sm hover:bg-surface-container-high rounded-full text-label-md font-label-md text-on-surface-variant">Technical</button>
+<button class="px-md py-sm hover:bg-surface-container-high rounded-full text-label-md font-label-md text-on-surface-variant">Soft Skills</button>
+<button class="px-md py-sm hover:bg-surface-container-high rounded-full text-label-md font-label-md text-on-surface-variant">Leadership</button>
+</div>
+</div>
+<!-- Skills Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg" id="skills-container">
+<!-- Skill Card 1 -->
+<div class="skill-card bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">terminal</span>
+</div>
+<div class="flex gap-xs">
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-variant text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-error-container text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-background mb-xs">Python Programming</h3>
+<div class="flex items-center gap-sm mb-lg">
+<span class="px-md py-xs bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-label-sm font-label-sm">Advanced</span>
+<span class="text-body-sm font-body-sm text-outline">Verified</span>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant mb-xs">
+<span>Proficiency</span>
+<span>85%</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<!-- Skill Card 2 -->
+<div class="skill-card bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-fixed">groups</span>
+</div>
+<div class="flex gap-xs">
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-variant text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-error-container text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-background mb-xs">Agile Leadership</h3>
+<div class="flex items-center gap-sm mb-lg">
+<span class="px-md py-xs bg-secondary-container text-on-secondary-container rounded-full text-label-sm font-label-sm">Intermediate</span>
+<span class="text-body-sm font-body-sm text-outline">In Progress</span>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant mb-xs">
+<span>Proficiency</span>
+<span>60%</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 60%"></div>
+</div>
+</div>
+</div>
+<!-- Skill Card 3 -->
+<div class="skill-card bg-surface-container-lowest border border-outline-variant rounded-xl p-lg flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant">data_exploration</span>
+</div>
+<div class="flex gap-xs">
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-variant text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-error-container text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-background mb-xs">Data Visualization</h3>
+<div class="flex items-center gap-sm mb-lg">
+<span class="px-md py-xs bg-primary-fixed text-on-primary-fixed-variant rounded-full text-label-sm font-label-sm">Beginner</span>
+<span class="text-body-sm font-body-sm text-outline">New</span>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant mb-xs">
+<span>Proficiency</span>
+<span>25%</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 25%"></div>
+</div>
+</div>
+</div>
+<!-- Empty State / Add Suggestion Card -->
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-lg flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container-low transition-all" onclick="openModal()">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-on-surface-variant">add</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface-variant">Add a New Skill</h3>
+<p class="text-body-sm font-body-sm text-outline mt-xs">Expand your horizons by adding skills recommended for your track.</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm py-2 pb-safe bg-surface border-t border-outline-variant rounded-t-xl shadow-md">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">psychology</span>
+<span class="text-label-sm font-label-sm">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-label-sm font-label-sm">Coach</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-label-sm font-label-sm">Analytics</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Add Skill Modal -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-md bg-black/40 backdrop-blur-sm" id="addSkillModal">
+<div class="bg-surface-container-lowest w-full max-w-md rounded-2xl shadow-xl overflow-hidden animate-in fade-in zoom-in duration-200">
+<div class="px-lg py-lg border-b border-outline-variant flex justify-between items-center">
+<h3 class="text-headline-sm font-headline-sm">Add Professional Skill</h3>
+<button class="text-outline hover:text-on-surface" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-lg space-y-md">
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-xs">Skill Name</label>
+<input class="w-full px-md py-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-body-md transition-all" placeholder="e.g. UX Research" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-xs">Category</label>
+<select class="w-full px-md py-md border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-body-md transition-all bg-white">
+<option>Technical</option>
+<option>Leadership</option>
+<option>Communications</option>
+<option>Design</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-xs">Proficiency Level</label>
+<div class="grid grid-cols-3 gap-sm">
+<button class="py-md border border-outline-variant rounded-lg text-label-md hover:bg-surface-container-low transition-colors">Beginner</button>
+<button class="py-md border border-primary bg-primary-container text-white rounded-lg text-label-md">Intermediate</button>
+<button class="py-md border border-outline-variant rounded-lg text-label-md hover:bg-surface-container-low transition-colors">Advanced</button>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-xs">Initial Progress (%)</label>
+<input class="w-full accent-primary h-2 bg-surface-container-high rounded-full appearance-none cursor-pointer" max="100" min="0" type="range" value="50"/>
+<div class="flex justify-between text-label-sm font-label-sm text-outline mt-xs">
+<span>0%</span>
+<span>50%</span>
+<span>100%</span>
+</div>
+</div>
+</div>
+<div class="px-lg py-lg bg-surface-container-low flex gap-md">
+<button class="flex-1 py-md border border-outline-variant rounded-lg font-label-md text-on-surface hover:bg-surface-variant transition-all" onclick="closeModal()">Cancel</button>
+<button class="flex-1 py-md bg-primary text-white rounded-lg font-label-md hover:opacity-90 transition-all shadow-md" onclick="closeModal()">Save Skill</button>
+</div>
+</div>
+</div>
+<script>
+        function openModal() {
+            const modal = document.getElementById('addSkillModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('addSkillModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Simple animation on scroll for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-card').forEach(card => {
+            card.classList.add('transition-all', 'duration-500', 'opacity-0', 'translate-y-4');
+            observer.observe(card);
+        });
+
+        // Search highlight mock logic
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('input', (e) => {
+            const val = e.target.value.toLowerCase();
+            document.querySelectorAll('.skill-card').forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(val)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body></html>

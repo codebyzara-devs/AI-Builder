@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings | SkillBridge AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#191b23",
+                    "surface-container": "#ededf9",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#dae2fd",
+                    "on-tertiary-fixed": "#360f00",
+                    "surface-container-high": "#e7e7f3",
+                    "inverse-surface": "#2e3039",
+                    "tertiary": "#943700",
+                    "primary-fixed": "#dbe1ff",
+                    "on-surface-variant": "#434655",
+                    "on-secondary-container": "#5c647a",
+                    "surface-container-low": "#f3f3fe",
+                    "on-secondary-fixed": "#131b2e",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#bc4800",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#e1e2ed",
+                    "on-primary-container": "#eeefff",
+                    "secondary-fixed": "#dae2fd",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-primary-fixed": "#00174b",
+                    "inverse-primary": "#b4c5ff",
+                    "primary": "#004ac6",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "surface-tint": "#0053db",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#c3c6d7",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#ffede6",
+                    "surface-container-highest": "#e1e2ed",
+                    "secondary": "#565e74",
+                    "surface-bright": "#faf8ff",
+                    "outline": "#737686",
+                    "surface": "#faf8ff",
+                    "primary-container": "#2563eb",
+                    "on-surface": "#191b23",
+                    "background": "#faf8ff",
+                    "surface-dim": "#d9d9e5",
+                    "inverse-on-surface": "#f0f0fb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "sm": "8px",
+                    "container-max": "1280px",
+                    "2xl": "48px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "gutter": "24px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "3xl": "64px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "display": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab-indicator {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        input:focus { outline: none; }
+        .setting-row:last-child { border-bottom: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0 md:pt-16">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-lg h-16 bg-surface border-b border-outline-variant shadow-none">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A professional, close-up portrait of a diverse male executive in a well-lit modern office environment. The subject Alex Morgan exhibits confidence with a warm smile, wearing a dark blazer over a crisp white shirt. The background features soft, out-of-focus glass walls and subtle hints of corporate technology, maintaining a high-trust professional growth aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFjoZlXt3q6QDtWzwa_8LMWobggxY5_iIKxZKxBg7Dw5aKHeMaTeWZ7PxXjDHT1ZbHKEdABsK9mHoLA-RgGXaV1vQ0IeOqyEa7XeWtBoEI4KxobrHqCtxHatd6sUPFoen3Ly0tKk8X1OSPUkXJck85PhUEj_lG5aDZTeGkG1awZRbVTXAdXZlhKevu7VY0LdSzDMTPuJmLNby9w1mAqXn9USbq4JkZLKqCtP_FesBis0d35nksd2xHIjWnmpwnpo1Y6l3CdjjA6oXu"/>
+</div>
+<span class="text-headline-sm font-headline-sm font-bold text-primary">SkillBridge AI</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary p-2 rounded-full hover:bg-surface-container-low transition-colors">notifications</button>
+</div>
+</header>
+<div class="max-w-container-max mx-auto flex">
+<!-- NavigationDrawer (Desktop Only) -->
+<aside class="hidden md:flex flex-col h-[calc(100vh-64px)] py-lg w-80 bg-surface-container-low border-r border-outline-variant">
+<div class="px-lg mb-xl flex flex-col gap-xs">
+<h2 class="text-headline-sm font-headline-sm text-primary font-bold">Alex Morgan</h2>
+<p class="text-label-md font-label-md text-on-surface-variant">Skill Level: Senior</p>
+<p class="text-label-sm font-label-sm text-outline">Member since 2024</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-lg py-3 gap-md text-on-surface-variant hover:bg-surface-variant rounded-r-full mr-4 transition-all" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-label-md font-label-md">Learning Roadmap</span>
+</a>
+<a class="flex items-center px-lg py-3 gap-md text-on-surface-variant hover:bg-surface-variant rounded-r-full mr-4 transition-all" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="text-label-md font-label-md">Resume Builder</span>
+</a>
+<a class="flex items-center px-lg py-3 gap-md text-on-surface-variant hover:bg-surface-variant rounded-r-full mr-4 transition-all" href="#">
+<span class="material-symbols-outlined">workspace_premium</span>
+<span class="text-label-md font-label-md">Premium Upgrade</span>
+</a>
+<a class="flex items-center px-lg py-3 gap-md bg-secondary-container text-on-secondary-container font-semibold rounded-r-full mr-4 scale-98 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-label-md font-label-md">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-md md:px-xl py-lg">
+<div class="max-w-3xl mx-auto">
+<div class="mb-xl">
+<h1 class="text-headline-lg font-headline-lg text-on-surface mb-xs">Settings</h1>
+<p class="text-body-md font-body-md text-on-surface-variant">Manage your account preferences and security settings.</p>
+</div>
+<!-- Section: Edit Profile -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden mb-lg shadow-sm">
+<div class="px-lg py-md border-b border-outline-variant bg-surface-container-low/50">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Edit Profile</h2>
+</div>
+<div class="p-lg space-y-md">
+<div class="flex items-center gap-xl pb-md">
+<div class="relative">
+<div class="w-24 h-24 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of Alex Morgan, a senior skill specialist. The lighting is soft and flattering, creating a premium professional look. The color palette is composed of navy blues, whites, and subtle grey backgrounds. He has a warm, confident expression, wearing high-quality professional attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1dDiGxTCvpljHucDgQMMgeJevcAXwzM17AFXsHVDPIOHwt9sLHaCYoJcZqNuUW4EKb1nQtUbvqsNEZGD6PyYHDKiwUmkl94p-PSJg2j1cRrjtZH8LT6g63G2p_W5QEIJ9DxIgoydqBRH-_BOlfGKGSTt7EqSFjDPADWOWb3gsPsrqX_2RU0tCrl7N09FpCTMgkERCO-E1kxcwAucGZnExM51COtS9P9jyTpOZAs3W-SMQu0UrGXtikIYQq-nxiPalL73vK48Lf6Ac"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-on-primary p-2 rounded-full shadow-lg hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+</button>
+</div>
+<div class="flex-1">
+<p class="text-label-md font-label-md text-on-surface font-semibold">Profile Photo</p>
+<p class="text-body-sm font-body-sm text-outline mb-sm">Recommended: Square image, at least 400x400px.</p>
+<button class="text-primary text-label-md font-label-md hover:underline">Change photo</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Full Name</label>
+<input class="w-full px-md py-2 border border-outline-variant rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-body-md font-body-md" type="text" value="Alex Morgan"/>
+</div>
+<div class="space-y-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Email Address</label>
+<input class="w-full px-md py-2 border border-outline-variant rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-body-md font-body-md" type="email" value="alex.morgan@skillbridge.ai"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Professional Bio</label>
+<textarea class="w-full px-md py-2 border border-outline-variant rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all text-body-md font-body-md" rows="3">Senior Project Manager with 8+ years of experience in AI-driven skill development ecosystems.</textarea>
+</div>
+<div class="flex justify-end gap-md pt-md">
+<button class="px-lg py-2 border border-outline-variant text-secondary rounded-lg font-label-md hover:bg-surface-container transition-colors">Cancel</button>
+<button class="px-lg py-2 bg-primary text-on-primary rounded-lg font-label-md hover:opacity-90 active:scale-95 transition-all">Save Changes</button>
+</div>
+</div>
+</section>
+<!-- Section: Security -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden mb-lg shadow-sm">
+<div class="px-lg py-md border-b border-outline-variant bg-surface-container-low/50">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Security</h2>
+</div>
+<div class="divide-y divide-outline-variant">
+<div class="p-lg flex justify-between items-center hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-outline">lock</span>
+<div>
+<p class="text-label-md font-label-md text-on-surface">Change Password</p>
+<p class="text-body-sm font-body-sm text-outline">Last changed 3 months ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</div>
+<div class="p-lg flex justify-between items-center hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-outline">security</span>
+<div>
+<p class="text-label-md font-label-md text-on-surface">Two-Factor Authentication</p>
+<p class="text-body-sm font-body-sm text-outline">Currently Disabled</p>
+</div>
+</div>
+<button class="text-primary text-label-md font-label-md hover:underline">Enable</button>
+</div>
+</div>
+</section>
+<!-- Section: Preferences -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden mb-lg shadow-sm">
+<div class="px-lg py-md border-b border-outline-variant bg-surface-container-low/50">
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Preferences</h2>
+</div>
+<div class="divide-y divide-outline-variant">
+<!-- Theme Toggle -->
+<div class="p-lg flex justify-between items-center">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-outline">dark_mode</span>
+<div>
+<p class="text-label-md font-label-md text-on-surface">Appearance</p>
+<p class="text-body-sm font-body-sm text-outline">Switch between light and dark themes</p>
+</div>
+</div>
+<div class="bg-surface-container p-1 rounded-full flex gap-1">
+<button class="px-4 py-1 rounded-full text-label-sm font-label-sm transition-all bg-primary-container text-on-primary-container" id="light-btn" onclick="setTheme('light')">Light</button>
+<button class="px-4 py-1 rounded-full text-label-sm font-label-sm transition-all text-on-surface-variant" id="dark-btn" onclick="setTheme('dark')">Dark</button>
+</div>
+</div>
+<!-- Notification Preferences -->
+<div class="p-lg">
+<div class="flex items-center gap-md mb-md">
+<span class="material-symbols-outlined text-outline">notifications_active</span>
+<p class="text-label-md font-label-md text-on-surface">Notification Channels</p>
+</div>
+<div class="space-y-md ml-10">
+<label class="flex items-center justify-between cursor-pointer">
+<span class="text-body-md font-body-md text-on-surface-variant">Email Digest (Weekly)</span>
+<input checked="" class="w-10 h-5 rounded-full appearance-none bg-outline-variant checked:bg-primary relative transition-all before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-4 before:h-4 before:rounded-full before:bg-white checked:before:translate-x-5 before:transition-transform cursor-pointer" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between cursor-pointer">
+<span class="text-body-md font-body-md text-on-surface-variant">Coach Messages (Push)</span>
+<input checked="" class="w-10 h-5 rounded-full appearance-none bg-outline-variant checked:bg-primary relative transition-all before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-4 before:h-4 before:rounded-full before:bg-white checked:before:translate-x-5 before:transition-transform cursor-pointer" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between cursor-pointer">
+<span class="text-body-md font-body-md text-on-surface-variant">Skill Gap Alerts</span>
+<input class="w-10 h-5 rounded-full appearance-none bg-outline-variant checked:bg-primary relative transition-all before:content-[''] before:absolute before:top-0.5 before:left-0.5 before:w-4 before:h-4 before:rounded-full before:bg-white checked:before:translate-x-5 before:transition-transform cursor-pointer" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Danger Zone -->
+<section class="bg-error-container/20 border border-error/20 rounded-xl overflow-hidden mb-xl shadow-sm">
+<div class="px-lg py-md border-b border-error/10 bg-error-container/10">
+<h2 class="text-headline-sm font-headline-sm text-error">Danger Zone</h2>
+</div>
+<div class="p-lg flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<p class="text-label-md font-label-md text-on-surface font-semibold">Delete Account</p>
+<p class="text-body-sm font-body-sm text-on-error-container/70">Permanently remove all your learning progress and personal data. This action is irreversible.</p>
+</div>
+<button class="px-lg py-2 bg-error text-on-error rounded-lg font-label-md hover:bg-error/90 active:scale-95 transition-all self-start md:self-center">Delete Account</button>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm py-2 pb-safe bg-surface border-t border-outline-variant shadow-md">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-transform" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-label-sm font-label-sm">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-transform" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-label-sm font-label-sm">Coach</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-transform" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-label-sm font-label-sm">Analytics</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        function setTheme(mode) {
+            const html = document.documentElement;
+            const lightBtn = document.getElementById('light-btn');
+            const darkBtn = document.getElementById('dark-btn');
+
+            if (mode === 'dark') {
+                html.classList.add('dark');
+                darkBtn.classList.add('bg-primary-container', 'text-on-primary-container');
+                darkBtn.classList.remove('text-on-surface-variant');
+                lightBtn.classList.remove('bg-primary-container', 'text-on-primary-container');
+                lightBtn.classList.add('text-on-surface-variant');
+            } else {
+                html.classList.remove('dark');
+                lightBtn.classList.add('bg-primary-container', 'text-on-primary-container');
+                lightBtn.classList.remove('text-on-surface-variant');
+                darkBtn.classList.remove('bg-primary-container', 'text-on-primary-container');
+                darkBtn.classList.add('text-on-surface-variant');
+            }
+        }
+
+        // Micro-interaction for inputs
+        document.querySelectorAll('input, textarea').forEach(el => {
+            el.addEventListener('focus', () => {
+                el.parentElement.classList.add('ring-2', 'ring-primary/10');
+            });
+            el.addEventListener('blur', () => {
+                el.parentElement.classList.remove('ring-2', 'ring-primary/10');
+            });
+        });
+    </script>
+</body></html>

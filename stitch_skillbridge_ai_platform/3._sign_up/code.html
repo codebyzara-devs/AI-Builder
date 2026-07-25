@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign Up | SkillBridge AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#eeefff",
+                        "secondary": "#565e74",
+                        "surface": "#faf8ff",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d9d9e5",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#bc4800",
+                        "outline": "#737686",
+                        "on-background": "#191b23",
+                        "secondary-fixed": "#dae2fd",
+                        "on-primary-fixed": "#00174b",
+                        "primary-container": "#2563eb",
+                        "tertiary-fixed": "#ffdbcd",
+                        "secondary-container": "#dae2fd",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-surface-variant": "#434655",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-container-low": "#f3f3fe",
+                        "on-tertiary-container": "#ffede6",
+                        "primary": "#004ac6",
+                        "outline-variant": "#c3c6d7",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "surface-tint": "#0053db",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-secondary-container": "#5c647a",
+                        "surface-container-highest": "#e1e2ed",
+                        "surface-bright": "#faf8ff",
+                        "tertiary": "#943700",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#ededf9",
+                        "surface-container-high": "#e7e7f3",
+                        "on-surface": "#191b23",
+                        "background": "#faf8ff",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "surface-variant": "#e1e2ed",
+                        "inverse-surface": "#2e3039"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "container-max": "1280px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface">
+<main class="min-h-screen flex items-center justify-center p-md md:p-lg">
+<div class="w-full max-w-[1100px] grid grid-cols-1 lg:grid-cols-2 bg-surface-container-lowest rounded-xl shadow-md overflow-hidden min-h-[700px]">
+<!-- Left Side: Visual/Context -->
+<div class="hidden lg:flex flex-col justify-between p-2xl relative bg-primary overflow-hidden">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-primary-fixed-dim blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-primary-container blur-3xl"></div>
+</div>
+<div class="relative z-10">
+<h1 class="text-white font-display text-display mb-md">SkillBridge AI</h1>
+<p class="text-on-primary-container font-body-lg text-body-lg max-w-md">
+                        Join the elite platform for career trajectory planning and skill management. Unlock your potential with AI-driven insights.
+                    </p>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-md p-md bg-white/10 rounded-xl border border-white/20 backdrop-blur-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white/40">
+<img class="w-full h-full object-cover" data-alt="Close-up professional headshot of a confident female senior engineer in a high-tech corporate office setting. The lighting is soft and natural, emphasizing a professional yet approachable tone. The color palette features clean blues and whites, consistent with a high-end enterprise aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDONW1CSjhtA25sVjLramNiBXWsiewhtGgRN-S8-B2EDzedZLPWOKf-5ViwPQCOCqC4XeXbhyGNo3MRu7VQ8WD15k4hwQ_Bo_13lTefg5yAw9y6J_p4HUsJlQWok2DxD7ONxVCRI5Q6xNAaAb8t0JZT-u6a46qLBqZP6pmAAIyC4uGmoe3Ew8uO1XQ3eln-_vvMKJHWO7MKg7SeQr0y6tFqVCtfNoDlf0vUS6QpV0_QpvQw982h9ppRWaXXBPBMDybWCbHVmthDCbE9"/>
+</div>
+<div>
+<p class="text-white font-label-md text-label-md">"SkillBridge transformed my career path in 6 months."</p>
+<p class="text-on-primary-container text-label-sm font-label-sm">Sarah Jenkins • Senior Architect</p>
+</div>
+</div>
+</div>
+<!-- Abstract Decorative Image -->
+<div class="absolute right-[-10%] top-[20%] w-full h-full pointer-events-none opacity-40">
+<img class="w-full h-full object-contain" data-alt="A sophisticated abstract visualization of a digital neural network and interconnected nodes. The design uses sleek, glowing lines in primary blue and white against a deep navy background. The style is minimalist and high-tech, evoking intelligence, growth, and professional connectivity for a modern HR platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrjY96uE4u8ZqN6NozzirOzTSLe97Bok4zzcJK7d4PEsed4sUmkGZZsnb8Gu6Fjy_r5zcBKNiSXDkfPKO9UnR6kZ-R36bOCv35f_5OWBld5DCoVZ6Vuu7K8sxrQ8NV0WzbnGmDqLIDe7vU60Sk5KU12b_gUkArdMGn94NtbMreJIjI7pgPpQTDBFZoZWhJm2JlIlvHLyDDcI6XJBwO8e1AIQ95KnLr6Juo-ZrLDTwcA8Z1zzEn-sP5t3JgA11K2rOCucdVpertgTeu"/>
+</div>
+</div>
+<!-- Right Side: Sign Up Form -->
+<div class="flex flex-col p-lg md:p-2xl bg-surface-container-lowest overflow-y-auto">
+<div class="mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-xs">Create Account</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Enter your details to begin your journey.</p>
+</div>
+<form class="space-y-md" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="full_name">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">person</span>
+<input class="w-full pl-10 pr-md py-md rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-body-md font-body-md" id="full_name" placeholder="Alex Morgan" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">mail</span>
+<input class="w-full pl-10 pr-md py-md rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-body-md font-body-md" id="email" placeholder="alex@company.com" type="email"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="university">University</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">school</span>
+<input class="w-full pl-10 pr-md py-md rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-body-md font-body-md" id="university" placeholder="Stanford University" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="degree">Degree</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">military_tech</span>
+<input class="w-full pl-10 pr-md py-md rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-body-md font-body-md" id="degree" placeholder="MSc Computer Science" type="text"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="password">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">lock</span>
+<input class="w-full pl-10 pr-md py-md rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-body-md font-body-md" id="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface" for="confirm_password">Confirm Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">verified_user</span>
+<input class="w-full pl-10 pr-md py-md rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-body-md font-body-md" id="confirm_password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-sm pt-xs">
+<input class="mt-1 w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary" id="terms" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="terms">
+                            I agree to the <a class="text-primary hover:underline" href="#">Terms of Service</a> and <a class="text-primary hover:underline" href="#">Privacy Policy</a>.
+                        </label>
+</div>
+<button class="w-full py-md px-lg bg-primary text-white font-label-md text-label-md rounded-lg hover:bg-primary-container active:scale-[0.98] transition-all shadow-sm flex items-center justify-center gap-sm">
+                        Create Account
+                    </button>
+</form>
+<div class="relative flex py-xl items-center">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-md font-label-sm text-label-sm text-outline">OR CONTINUE WITH</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<div class="grid grid-cols-1 gap-md">
+<button class="w-full flex items-center justify-center gap-md py-md px-lg bg-white border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors group">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="font-label-md text-label-md text-on-surface-variant group-hover:text-on-surface">Continue with Google</span>
+</button>
+</div>
+<p class="mt-2xl text-center font-body-sm text-body-sm text-on-surface-variant">
+                    Already have an account? <a class="text-primary font-semibold hover:underline" href="#">Log in</a>
+</p>
+</div>
+</div>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('.material-symbols-outlined').style.color = '#004ac6';
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('.material-symbols-outlined').style.color = '#737686';
+            });
+        });
+
+        // Simple button press effect enhancement
+        const mainBtn = document.querySelector('button.bg-primary');
+        mainBtn.addEventListener('mousedown', () => mainBtn.classList.add('opacity-80'));
+        mainBtn.addEventListener('mouseup', () => mainBtn.classList.remove('opacity-80'));
+        mainBtn.addEventListener('mouseleave', () => mainBtn.classList.remove('opacity-80'));
+    </script>
+</body></html>

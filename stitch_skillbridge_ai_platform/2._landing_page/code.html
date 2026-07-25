@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillBridge AI | Accelerate Your Career</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#eeefff",
+                    "secondary": "#565e74",
+                    "surface": "#faf8ff",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#d9d9e5",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#360f00",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f0f0fb",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#bc4800",
+                    "outline": "#737686",
+                    "on-background": "#191b23",
+                    "secondary-fixed": "#dae2fd",
+                    "on-primary-fixed": "#00174b",
+                    "primary-container": "#2563eb",
+                    "tertiary-fixed": "#ffdbcd",
+                    "secondary-container": "#dae2fd",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "on-secondary-fixed": "#131b2e",
+                    "on-surface-variant": "#434655",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-container-low": "#f3f3fe",
+                    "on-tertiary-container": "#ffede6",
+                    "primary": "#004ac6",
+                    "outline-variant": "#c3c6d7",
+                    "primary-fixed": "#dbe1ff",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "surface-tint": "#0053db",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "on-secondary-container": "#5c647a",
+                    "surface-container-highest": "#e1e2ed",
+                    "surface-bright": "#faf8ff",
+                    "tertiary": "#943700",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#ededf9",
+                    "surface-container-high": "#e7e7f3",
+                    "on-surface": "#191b23",
+                    "background": "#faf8ff",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "surface-variant": "#e1e2ed",
+                    "inverse-surface": "#2e3039"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "sm": "8px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "xl": "32px",
+                    "xs": "4px",
+                    "2xl": "48px",
+                    "lg": "24px",
+                    "container-max": "1280px",
+                    "3xl": "64px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "display": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.05), transparent),
+                        radial-gradient(circle at bottom left, rgba(37, 99, 235, 0.03), transparent);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-lg h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-sm">
+<img alt="SkillBridge AI Logo" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-Ks-_1j1a52_zkrljW-L6e1zQYIJ4jVbNaEUAg-Nr0jtdUn0f8IjRvk78WSyX8Rq5Hp2KHWFETzTcG5rcqMUTuCOvjdP9DQnXbDB43W4wRUWUmIAXM0K6hqPFX6gFVv0d7ajAWSZg3JtehEJy14pDaFnr8Zb8d1LgZ-5jG-_rGuvrV8YJR8UTKr9M_v68F07lUYC8LnKtZpvqRdqfjr7SP_cJbuXraVxjXvoxdXD-QLGB_9WMiLQoinLlLSs8HzXaFSktzWWVv8fn"/>
+<span class="text-headline-sm font-headline-sm font-bold text-primary">SkillBridge AI</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-xl">
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#features">Features</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#testimonials">Success Stories</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Pricing</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="hidden md:block px-md py-sm text-label-md font-label-md text-primary border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors">Sign In</button>
+<button class="px-md py-sm text-label-md font-label-md bg-primary text-on-primary rounded-lg shadow-sm hover:opacity-90 active:scale-95 transition-all">Get Started</button>
+<span class="material-symbols-outlined text-on-surface-variant md:hidden">menu</span>
+</div>
+</header>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative overflow-hidden hero-gradient py-2xl lg:py-3xl px-lg">
+<div class="max-w-container-max mx-auto grid lg:grid-cols-2 gap-xl items-center">
+<div class="z-10 text-center lg:text-left">
+<div class="inline-flex items-center gap-xs px-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm font-label-sm mb-md">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                        Next-Gen Career Intelligence
+                    </div>
+<h1 class="font-display text-display text-on-background mb-md leading-tight">
+                        Accelerate Your <span class="text-primary">Career</span> with AI
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-xl mx-auto lg:mx-0">
+                        The professional landscape is evolving. Bridge the gap between where you are and where you want to be with personalized AI skill analysis and roadmaps.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-md justify-center lg:justify-start">
+<button class="px-xl py-md bg-primary text-on-primary font-label-md text-label-md rounded-xl shadow-lg hover:shadow-primary-container/20 transition-all flex items-center justify-center gap-sm">
+                            Get Started Free
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="px-xl py-md bg-surface border border-outline-variant text-on-surface font-label-md text-label-md rounded-xl hover:bg-surface-container-low transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-primary">play_circle</span>
+                            Watch Demo
+                        </button>
+</div>
+<div class="mt-2xl flex items-center justify-center lg:justify-start gap-xl grayscale opacity-50">
+<!-- Logos/Trust indicators -->
+<span class="font-bold text-headline-sm">FORBES</span>
+<span class="font-bold text-headline-sm">TECHCRUNCH</span>
+<span class="font-bold text-headline-sm">WIRED</span>
+</div>
+</div>
+<div class="relative mt-xl lg:mt-0">
+<div class="glass-card rounded-2xl p-md shadow-2xl relative z-10 animate-float">
+<img class="rounded-xl w-full h-auto" data-alt="A high-end SaaS dashboard interface showing complex career analytics and skill progression charts. The UI is clean, using the SkillBridge AI primary blue palette with subtle gradients and soft shadows. Professional data visualizations and 3D geometric icons create a sense of technological advancement and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM6v8Ep6zJqx1eQqSAjVOQ3UAxPEQaSy7T06jkax6XYSCXjTVBBeAoiQmKKBrE4Fnz-OhwvOhv6CwSdQqVzpuYOi03FIJHwjAQf0-TVjZKfyO_SBvouBejco7DdCxqlTs2X-f5FKf-WzSzB0uxgoDDEnS2y9_q-bMqfkvO4tS3OwFj2gnHWzqrCJILfSAPxQw-9VDtezMUjPDSmXIrGIysteKwLaCUlPxGIkDm5BfIitcs87QdBYllfgAAkrABdvxUS_hGUEOXvTY-"/>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -bottom-8 -left-8 w-48 h-48 bg-secondary-fixed/30 rounded-full blur-2xl -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-2xl bg-surface px-lg" id="features">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-2xl">
+<h2 class="font-headline-lg text-headline-lg mb-sm">Master Your Future</h2>
+<p class="text-body-md text-on-surface-variant max-w-2xl mx-auto">Our AI-driven ecosystem provides the tools you need to stay competitive in an ever-shifting job market.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Feature 1: AI Skill Analysis -->
+<div class="md:col-span-8 group bg-surface-container-lowest border border-outline-variant p-2xl rounded-2xl hover:shadow-xl transition-all overflow-hidden relative">
+<div class="relative z-10">
+<div class="w-12 h-12 bg-primary-fixed flex items-center justify-center rounded-xl text-primary mb-lg">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-md">AI Skill Analysis</h3>
+<p class="text-body-md text-on-surface-variant mb-xl max-w-md">Our neural engine scans your current capabilities and benchmarks them against top-tier industry standards to identify your unique growth edge.</p>
+</div>
+<div class="absolute bottom-0 right-0 w-1/2 translate-x-12 translate-y-12 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-500">
+<img class="rounded-tl-2xl shadow-2xl" data-alt="A stylized 3D visualization of a human profile being scanned by blue laser lines, representing AI skill analysis. The aesthetic is clean and corporate, featuring a soft white background with primary blue light-leak effects. Floating data points and skill nodes orbit the profile, creating a sense of deep technical insight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFNm2MkX_V0xSRxkm23kNNIvJl_E90xPY_kpfbTKnjXJpBUCKRWePkrOlsSOpl8aGgeW2sqVK9LrMccfCImH8tCMemugvaM4QaKB76W8DJpJI5ccDf9ntmcdccO8fnfgHbvGv5I6wQdeP7sLPrmMSH2TpXE77_y8fY8TlaN0e4DVUovnPkR-SdtqfFiqhUmDsa4Q4faM4uQNEglrJvIOr872N1DiR89TyflUehLNugE9NC8P42zsqHarXnMMf__NMVbirfFmMD4KAq"/>
+</div>
+</div>
+<!-- Feature 2: Resume Review -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant p-2xl rounded-2xl hover:shadow-xl transition-all">
+<div class="w-12 h-12 bg-secondary-fixed flex items-center justify-center rounded-xl text-secondary mb-lg">
+<span class="material-symbols-outlined">description</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-md">Resume Review</h3>
+<p class="text-body-sm text-on-surface-variant mb-lg">Real-time feedback on your professional profile with ATS optimization and personalized power-word suggestions.</p>
+<div class="h-32 bg-surface-container rounded-lg border border-dashed border-outline-variant flex items-center justify-center">
+<span class="text-label-sm text-outline">Drop your CV here</span>
+</div>
+</div>
+<!-- Feature 3: Roadmap -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant p-2xl rounded-2xl hover:shadow-xl transition-all">
+<div class="w-12 h-12 bg-tertiary-fixed flex items-center justify-center rounded-xl text-tertiary mb-lg">
+<span class="material-symbols-outlined">map</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-md">Learning Roadmap</h3>
+<p class="text-body-sm text-on-surface-variant">Step-by-step guidance curated from the world's best learning platforms, specifically for your goals.</p>
+</div>
+<!-- Feature 4: Analytics -->
+<div class="md:col-span-8 bg-inverse-surface text-inverse-on-surface p-2xl rounded-2xl flex flex-col md:flex-row items-center gap-xl hover:shadow-xl transition-all">
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md mb-md">Real-Time Career Analytics</h3>
+<p class="text-body-md opacity-80 mb-xl">Track your progress, market demand for your skills, and salary projections in a unified dashboard.</p>
+<button class="px-lg py-sm bg-primary text-on-primary rounded-lg text-label-md font-label-md">Explore Analytics</button>
+</div>
+<div class="w-full md:w-1/3 aspect-square bg-white/10 rounded-xl flex items-center justify-center backdrop-blur-sm">
+<span class="material-symbols-outlined text-[64px]" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-2xl bg-surface-container-low px-lg" id="testimonials">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-2xl">
+<span class="text-primary font-label-md text-label-md uppercase tracking-widest">Success Stories</span>
+<h2 class="font-headline-lg text-headline-lg mt-xs">Trusted by 50,000+ Professionals</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-lg">
+<!-- Testimonial 1 -->
+<div class="glass-card p-xl rounded-2xl">
+<div class="flex items-center gap-md mb-lg">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a smiling young woman in business casual attire against a clean, softly lit studio background. The style is high-end corporate photography, focusing on a clear, trustworthy expression with natural lighting. The color palette is neutral with soft blue undertones to match the SkillBridge AI branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9MHJAARmUGS6HbApCm5BIILK5ZSWiMfUJmzeRLJcz9uD_uy25umLt73UW99Xq1xYV4DA4MVvOjruwcOmmQKJjVNIRXybsWFavkf9DueBJ8Rm8JZYo4f34EyBMdxeKYFl6AtQmyIL-vFr9A6O0VAkwMl4jADRnGnLNEsI9HcBQLeyiw5-wk7Yc6U_2dMg0QWp0-wb1ZWLp_hHvskcoCyfK9qACKc_y7RAYSEzw4XM5WbACF2T3a8zaNLlGErwE3XHLC1HofxQgxylV"/>
+</div>
+<div>
+<p class="font-label-md text-label-md">Sarah Jenkins</p>
+<p class="text-body-sm text-on-surface-variant">Senior Product Designer</p>
+</div>
+</div>
+<p class="text-body-md italic text-on-surface-variant">"SkillBridge AI completely changed how I look at my career growth. The roadmap feature saved me months of trial and error."</p>
+</div>
+<!-- Testimonial 2 -->
+<div class="glass-card p-xl rounded-2xl border-primary/20">
+<div class="flex items-center gap-md mb-lg">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a confident man in his late 30s with short hair, wearing a sleek blazer. The background is a modern office setting with soft bokeh blurring the interior details. The lighting is bright and professional, emphasizing a modern light-mode aesthetic consistent with the UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnRYCn1A_4ZuGUQl0zKEuoitFnXvUC-pKzVjGERP52uS2D_TP8LvN_rNV6P8e4037MkfxK5PnsARhMsZ-rDmkXmEgrreHHfz6U3_K8NNSYxw19Ae9hQ_VNrnaPGlirxQQFq7P0nUjT6rQU40zSvF64urNEjxTKf9q38MbPpLKr_RDlGzp2tUl7mzBvY1ju04e7ORiX22EFE22-UJcQbkw0PgNpMZhdGZEb2Di2YdPYaoF6cKaZMIt1P5khS-CzAgQq9F0S_c40wjFG"/>
+</div>
+<div>
+<p class="font-label-md text-label-md">Mark Thompson</p>
+<p class="text-body-sm text-on-surface-variant">Full Stack Engineer</p>
+</div>
+</div>
+<p class="text-body-md italic text-on-surface-variant">"The skill analysis tool is terrifyingly accurate. It found gaps in my knowledge I didn't even know were holding me back from senior roles."</p>
+</div>
+<!-- Testimonial 3 -->
+<div class="glass-card p-xl rounded-2xl">
+<div class="flex items-center gap-md mb-lg">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of an Asian woman in a bright, modern creative studio space. She is looking at the camera with a friendly, intelligent smile. The lighting is vibrant and high-key, with a clean and professional aesthetic that aligns with the corporate growth theme of the SkillBridge AI platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFplkHYFmSJ1yWfLzPBzNTOAb-MkgI8tuKGqHbKnCJW9v3PeUXiP4djisCywd1Qac2hc2X_WcA8P-t_IjhE8lB1ejDn8EyWdrKroQw10IvBJ9iQcxqJ09Z-y_BAFnWM2nRdUUf2Ad8AL1gFDPVJ9U7PYf_clEUK06FnPOOel_pvz3CTm148lukhK-7-DN3anmZ8uG-4cYJ4rVIIMBwpBWJ24N8ejOnbEP6TKY8zAQh5V5z4pnPn2aLMPvXzpxc9Xb3qcybOmrFPhE1"/>
+</div>
+<div>
+<p class="font-label-md text-label-md">Linh Pham</p>
+<p class="text-body-sm text-on-surface-variant">Marketing Lead</p>
+</div>
+</div>
+<p class="text-body-md italic text-on-surface-variant">"The Resume Review feature got me three interviews in the first week after applying its suggestions. Absolutely invaluable tool."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-3xl px-lg">
+<div class="max-w-container-max mx-auto bg-primary rounded-3xl p-2xl text-center relative overflow-hidden shadow-2xl">
+<!-- Abstract BG Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+</div>
+<div class="relative z-10">
+<h2 class="text-display font-display text-on-primary mb-md">Ready to Bridge the Gap?</h2>
+<p class="text-body-lg text-on-primary/80 mb-xl max-w-2xl mx-auto">Join thousands of professionals using AI to navigate their career path with precision and confidence.</p>
+<div class="flex flex-col sm:flex-row gap-md justify-center">
+<button class="px-xl py-md bg-white text-primary font-label-md text-label-md rounded-xl hover:scale-105 transition-transform">Start Your Free Journey</button>
+<button class="px-xl py-md bg-primary-container/30 text-on-primary border border-white/20 font-label-md text-label-md rounded-xl hover:bg-primary-container/40 transition-all">Contact Enterprise Sales</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface border-t border-outline-variant py-2xl px-lg">
+<div class="max-w-container-max mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-xl mb-xl">
+<div class="col-span-2">
+<div class="flex items-center gap-sm mb-lg">
+<img alt="SkillBridge AI Logo" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-Ks-_1j1a52_zkrljW-L6e1zQYIJ4jVbNaEUAg-Nr0jtdUn0f8IjRvk78WSyX8Rq5Hp2KHWFETzTcG5rcqMUTuCOvjdP9DQnXbDB43W4wRUWUmIAXM0K6hqPFX6gFVv0d7ajAWSZg3JtehEJy14pDaFnr8Zb8d1LgZ-5jG-_rGuvrV8YJR8UTKr9M_v68F07lUYC8LnKtZpvqRdqfjr7SP_cJbuXraVxjXvoxdXD-QLGB_9WMiLQoinLlLSs8HzXaFSktzWWVv8fn"/>
+<span class="text-headline-sm font-headline-sm font-bold text-primary">SkillBridge AI</span>
+</div>
+<p class="text-body-sm text-on-surface-variant max-w-xs mb-lg">Empowering professionals to navigate the AI-driven future through intelligent analysis and personalized learning.</p>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">public</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">alternate_email</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md mb-lg">Product</h4>
+<ul class="space-y-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-primary" href="#">Skill Analysis</a></li>
+<li><a class="hover:text-primary" href="#">Resume Builder</a></li>
+<li><a class="hover:text-primary" href="#">Roadmaps</a></li>
+<li><a class="hover:text-primary" href="#">Pricing</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md mb-lg">Company</h4>
+<ul class="space-y-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-primary" href="#">About Us</a></li>
+<li><a class="hover:text-primary" href="#">Careers</a></li>
+<li><a class="hover:text-primary" href="#">Blog</a></li>
+<li><a class="hover:text-primary" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md mb-lg">Support</h4>
+<ul class="space-y-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-primary" href="#">Help Center</a></li>
+<li><a class="hover:text-primary" href="#">API Docs</a></li>
+<li><a class="hover:text-primary" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md mb-lg">Get the App</h4>
+<div class="space-y-sm">
+<button class="w-full px-md py-xs bg-inverse-surface text-inverse-on-surface rounded-lg flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-sm">phone_iphone</span>
+<span class="text-xs">App Store</span>
+</button>
+<button class="w-full px-md py-xs bg-inverse-surface text-inverse-on-surface rounded-lg flex items-center justify-center gap-xs">
+<span class="material-symbols-outlined text-sm">robot_2</span>
+<span class="text-xs">Play Store</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto pt-xl border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-md">
+<p class="text-label-sm text-on-surface-variant">© 2024 SkillBridge AI. All rights reserved.</p>
+<div class="flex gap-xl text-label-sm text-on-surface-variant">
+<a class="hover:text-primary" href="#">Cookies Settings</a>
+<a class="hover:text-primary" href="#">Legal</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile only) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm py-2 pb-safe bg-surface border-t border-outline-variant shadow-md">
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-label-sm font-label-sm">Skills</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-label-sm font-label-sm">Coach</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</div>
+</div>
+<script>
+        // Micro-interaction for floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-10px); }
+                100% { transform: translateY(0px); }
+            }
+            .animate-float {
+                animation: float 4s ease-in-out infinite;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Sticky Header Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md', 'bg-opacity-90', 'backdrop-blur-md');
+            } else {
+                header.classList.remove('shadow-md', 'bg-opacity-90', 'backdrop-blur-md');
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillBridge AI - Profile</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-background": "#191b23",
+                  "surface-container": "#ededf9",
+                  "on-tertiary": "#ffffff",
+                  "secondary-container": "#dae2fd",
+                  "on-tertiary-fixed": "#360f00",
+                  "surface-container-high": "#e7e7f3",
+                  "inverse-surface": "#2e3039",
+                  "tertiary": "#943700",
+                  "primary-fixed": "#dbe1ff",
+                  "on-surface-variant": "#434655",
+                  "on-secondary-container": "#5c647a",
+                  "surface-container-low": "#f3f3fe",
+                  "on-secondary-fixed": "#131b2e",
+                  "on-secondary": "#ffffff",
+                  "primary-fixed-dim": "#b4c5ff",
+                  "error": "#ba1a1a",
+                  "tertiary-container": "#bc4800",
+                  "on-error-container": "#93000a",
+                  "error-container": "#ffdad6",
+                  "surface-variant": "#e1e2ed",
+                  "on-primary-container": "#eeefff",
+                  "secondary-fixed": "#dae2fd",
+                  "surface-container-lowest": "#ffffff",
+                  "on-tertiary-fixed-variant": "#7d2d00",
+                  "on-primary-fixed": "#00174b",
+                  "inverse-primary": "#b4c5ff",
+                  "primary": "#004ac6",
+                  "secondary-fixed-dim": "#bec6e0",
+                  "surface-tint": "#0053db",
+                  "tertiary-fixed-dim": "#ffb596",
+                  "on-primary-fixed-variant": "#003ea8",
+                  "on-error": "#ffffff",
+                  "outline-variant": "#c3c6d7",
+                  "tertiary-fixed": "#ffdbcd",
+                  "on-secondary-fixed-variant": "#3f465c",
+                  "on-primary": "#ffffff",
+                  "on-tertiary-container": "#ffede6",
+                  "surface-container-highest": "#e1e2ed",
+                  "secondary": "#565e74",
+                  "surface-bright": "#faf8ff",
+                  "outline": "#737686",
+                  "surface": "#faf8ff",
+                  "primary-container": "#2563eb",
+                  "on-surface": "#191b23",
+                  "background": "#faf8ff",
+                  "surface-dim": "#d9d9e5",
+                  "inverse-on-surface": "#f0f0fb"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "unit": "4px",
+                  "sm": "8px",
+                  "container-max": "1280px",
+                  "2xl": "48px",
+                  "xs": "4px",
+                  "md": "16px",
+                  "gutter": "24px",
+                  "xl": "32px",
+                  "lg": "24px",
+                  "3xl": "64px"
+          },
+          "fontFamily": {
+                  "label-md": ["Inter"],
+                  "headline-sm": ["Inter"],
+                  "body-sm": ["Inter"],
+                  "display": ["Inter"],
+                  "body-lg": ["Inter"],
+                  "headline-lg-mobile": ["Inter"],
+                  "body-md": ["Inter"],
+                  "label-sm": ["Inter"],
+                  "headline-lg": ["Inter"],
+                  "headline-md": ["Inter"]
+          },
+          "fontSize": {
+                  "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                  "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                  "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                  "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                  "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                  "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                  "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                  "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #F8FAFC; /* Base layer from design system */
+      font-family: 'Inter', sans-serif;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
+      border: 1px solid #E2E8F0;
+    }
+    .shadow-subtle {
+      shadow: 0px 4px 12px rgba(15, 23, 42, 0.05);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-lg h-16 bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young woman with a friendly expression, set against a blurred corporate office background with soft natural lighting and a cool blue color palette. The image is crisp and high-quality, reflecting a professional identity in a modern tech environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT-HpKg5o4vM7m3cv9qtykAeA2T1pOHn8jx9BujHsyHgEtQtnVUzj2iANxsbhUczSFNHW05hFQNgcFbAKOq5cOo85SM_9748AhsNyqGmytp4CX28wBUIq_ftofHAiqV8IXAtDThO3nEqN_SuXUJH2_rrRujcYK7s6GaTbz8GCXeofTMTgZh5LnUW-oVMZ1nCllX4SBzv-8Atew76RSIh8Xgwi7rzNEBLqf6Mycf-66OEJAmOHsR4KJYGNxaUNwg8oU4gq3nXptneYD"/>
+</div>
+<h1 class="text-headline-sm font-headline-sm font-bold text-primary">SkillBridge AI</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full">notifications</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="pt-20 pb-24 px-md md:px-lg max-w-screen-container-max mx-auto">
+<!-- Hero Profile Section -->
+<section class="mb-xl">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-sm flex flex-col md:flex-row gap-lg items-center md:items-start">
+<div class="relative">
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border-4 border-surface-container shadow-md">
+<img class="w-full h-full object-cover" data-alt="A high-resolution close-up portrait of Alex Morgan, a professional with a confident smile, wearing business-casual attire. The background is a clean, minimalist studio setting with soft diffused lighting and subtle blue accents that align with a high-end corporate design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4j5NIsnk4noDw00xnDNrkOxbqDFruEFXzhPTGN2HNoBdTjbiqyCtovmoxCjvZBPzf-2XdH_ssq_Px3gkAC3DINyw3dlDbT4mljbjDc-GqfKTlT2tPOoxdtXnJztImzaFXltt9OukqV06WkY3ojh0HWC95AwhE1RH3X51P-9N7oAjBWEVlS7EtmTfKjWw0TfydFXX4B9oZBaaRDHwlmNb7XAjA_O9ptq3GcIEOotnNed-Y3CwlRt6W0QGSrT1wzg7QXQhiT2AtSS5A"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-label-sm font-label-sm shadow-lg">
+            Senior
+          </div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<div class="flex flex-col md:flex-row md:justify-between md:items-start gap-md">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Alex Morgan</h2>
+<p class="text-body-lg text-on-surface-variant font-medium">Stanford University • Computer Science</p>
+<div class="flex items-center justify-center md:justify-start gap-sm mt-sm text-label-md text-outline">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Palo Alto, California</span>
+<span class="mx-xs">•</span>
+<span>Member since 2024</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-surface-tint text-on-primary px-xl py-md rounded-lg font-label-md transition-all active:scale-95 shadow-md">
+              Edit Profile
+            </button>
+</div>
+<div class="mt-lg grid grid-cols-2 md:grid-cols-4 gap-md border-t border-outline-variant pt-lg">
+<div>
+<p class="text-label-sm text-outline uppercase tracking-wider">Courses</p>
+<p class="text-headline-sm font-headline-sm text-primary">24</p>
+</div>
+<div>
+<p class="text-label-sm text-outline uppercase tracking-wider">Projects</p>
+<p class="text-headline-sm font-headline-sm text-primary">12</p>
+</div>
+<div>
+<p class="text-label-sm text-outline uppercase tracking-wider">Skills</p>
+<p class="text-headline-sm font-headline-sm text-primary">38</p>
+</div>
+<div>
+<p class="text-label-sm text-outline uppercase tracking-wider">Badges</p>
+<p class="text-headline-sm font-headline-sm text-primary">15</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Left Column: Skills & Badges (Bento Style) -->
+<div class="lg:col-span-4 space-y-lg">
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-sm">
+<div class="flex justify-between items-center mb-md">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Expertise</h3>
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+<div class="flex flex-wrap gap-sm">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-md font-label-md">Machine Learning</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-md font-label-md">Natural Language Processing</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-md font-label-md">Python</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-md font-label-md">Cloud Architecture</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-md font-label-md">React.js</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-md font-label-md">TensorFlow</span>
+</div>
+<button class="w-full mt-lg border border-outline-variant text-on-surface font-label-md py-md rounded-lg hover:bg-surface-container transition-colors">
+            View All Skills
+          </button>
+</section>
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg shadow-sm">
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-md">Recent Badges</h3>
+<div class="grid grid-cols-3 gap-sm">
+<div class="aspect-square rounded-lg bg-surface-container flex items-center justify-center group cursor-pointer hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container text-3xl">workspace_premium</span>
+</div>
+<div class="aspect-square rounded-lg bg-surface-container flex items-center justify-center group cursor-pointer hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container text-3xl">military_tech</span>
+</div>
+<div class="aspect-square rounded-lg bg-surface-container flex items-center justify-center group cursor-pointer hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container text-3xl">verified</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Projects & Achievements -->
+<div class="lg:col-span-8 space-y-lg">
+<!-- Recent Projects -->
+<section>
+<div class="flex justify-between items-center mb-md">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Recent Projects</h3>
+<button class="text-primary font-label-md hover:underline">View Portfolio</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm group hover:shadow-md transition-all">
+<div class="h-32 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="A futuristic dashboard interface displaying complex data visualizations, neural network diagrams, and real-time analytics. The UI design is sleek and professional, featuring a dark mode aesthetic with vibrant primary blue glowing accents. High-tech, clean, and representative of an advanced AI project." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIb8cQkwKpXEyqu6t4RPgTRxScm9dG0_ryrqgpVePyRGWIXmH8RvzVeIL6ojskcaYKwj3V0NdjNFxqDtVqxcId6Y_c4HZ8158SN9JkLhxNHJpMyNSI8Xj5lXV8CxNW4KhKcSyrKZHbTDnRoB20PStwudFGl9elzutP5RLS0fPue97m8Ta44yEgDbvp1sXuWid3XVlOivg_PGP0sqGrwgMsp118V3sOcrcwhqRbUnS3sR5n-95tBCmgPI_14-HF1oJRq_MmOl_3T62J"/>
+<div class="absolute top-2 right-2 bg-on-background/60 text-white text-[10px] px-2 py-1 rounded backdrop-blur-md">AI / ML</div>
+</div>
+<div class="p-md">
+<h4 class="font-headline-sm text-on-surface">NeuralLink Dashboard</h4>
+<p class="text-body-sm text-on-surface-variant mt-xs line-clamp-2">Real-time visualization tool for monitoring deep learning training cycles.</p>
+<div class="mt-md flex justify-between items-center">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border border-white bg-secondary-fixed"></div>
+<div class="w-6 h-6 rounded-full border border-white bg-primary-fixed"></div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm group hover:shadow-md transition-all">
+<div class="h-32 bg-surface-container relative">
+<img class="w-full h-full object-cover" data-alt="A minimalist architectural 3D render showing a sustainable building integrated with nature. The lighting is soft morning sunlight, casting elegant shadows on clean concrete and lush green vegetation. The overall vibe is environmentally conscious and modern, fitting for a sustainability tech project." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARfqZTch7pUmcShYlUVW6xQN96IlRzqicXx7v99E6z7sGtfUO5zWzjtJkYcm-guzcCHKksUYEQyuZljFbgctqJogSnpkHAdUSJ5HdY9XF-zMeS6Mv_FnBxHTNUm6cU35DSF1aZ6PQE6BXmq765NeANAdzE7WQ2ibyShOzSLcsMEwX4tv3Q3K2w8kh0b1r55BRE5vkQIkTaZ90x92_KJozWqaFX0gH6WUPZNk2Bwmif9yl7qmp8liSYxbdKJ2np1V4vwWyFRAWsckVt"/>
+<div class="absolute top-2 right-2 bg-on-background/60 text-white text-[10px] px-2 py-1 rounded backdrop-blur-md">SUSTAINABILITY</div>
+</div>
+<div class="p-md">
+<h4 class="font-headline-sm text-on-surface">EcoTrack Mobile</h4>
+<p class="text-body-sm text-on-surface-variant mt-xs line-clamp-2">Personal carbon footprint calculator with gamified community challenges.</p>
+<div class="mt-md flex justify-between items-center">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border border-white bg-tertiary-fixed"></div>
+<div class="w-6 h-6 rounded-full border border-white bg-secondary-fixed"></div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Achievements & Certificates -->
+<section>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-md">Achievements & Certificates</h3>
+<div class="space-y-sm">
+<div class="flex items-center gap-md p-md bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary">workspace_premium</span>
+</div>
+<div class="flex-1">
+<h4 class="text-label-md font-label-md text-on-surface">AWS Certified Machine Learning – Specialty</h4>
+<p class="text-label-sm text-on-surface-variant">Amazon Web Services • Issued Jun 2024</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">open_in_new</span>
+</div>
+<div class="flex items-center gap-md p-md bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">school</span>
+</div>
+<div class="flex-1">
+<h4 class="text-label-md font-label-md text-on-surface">Professional Data Science Certificate</h4>
+<p class="text-label-sm text-on-surface-variant">IBM • Issued Mar 2024</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">open_in_new</span>
+</div>
+<div class="flex items-center gap-md p-md bg-surface-container-lowest border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">verified</span>
+</div>
+<div class="flex-1">
+<h4 class="text-label-md font-label-md text-on-surface">Top 5% Career Accelerator Program</h4>
+<p class="text-label-sm text-on-surface-variant">SkillBridge AI • Completed Jan 2024</p>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">open_in_new</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm py-2 pb-safe bg-surface border-t border-outline-variant shadow-md">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-label-sm font-label-sm">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-label-sm font-label-sm">Coach</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-label-sm font-label-sm">Analytics</span>
+</a>
+<!-- Profile is Active -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+    // Micro-interaction for hover effects
+    document.querySelectorAll('.group').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        el.classList.add('shadow-md');
+      });
+      el.addEventListener('mouseleave', () => {
+        el.classList.remove('shadow-md');
+      });
+    });
+  </script>
+</body></html>

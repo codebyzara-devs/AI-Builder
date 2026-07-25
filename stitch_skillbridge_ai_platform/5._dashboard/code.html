@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkillBridge AI - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#eeefff",
+                        "secondary": "#565e74",
+                        "surface": "#faf8ff",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d9d9e5",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-tertiary": "#ffffff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#bc4800",
+                        "outline": "#737686",
+                        "on-background": "#191b23",
+                        "secondary-fixed": "#dae2fd",
+                        "on-primary-fixed": "#00174b",
+                        "primary-container": "#2563eb",
+                        "tertiary-fixed": "#ffdbcd",
+                        "secondary-container": "#dae2fd",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-surface-variant": "#434655",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-container-low": "#f3f3fe",
+                        "on-tertiary-container": "#ffede6",
+                        "primary": "#004ac6",
+                        "outline-variant": "#c3c6d7",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "surface-tint": "#0053db",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-secondary-container": "#5c647a",
+                        "surface-container-highest": "#e1e2ed",
+                        "surface-bright": "#faf8ff",
+                        "tertiary": "#943700",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#ededf9",
+                        "surface-container-high": "#e7e7f3",
+                        "on-surface": "#191b23",
+                        "background": "#faf8ff",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "surface-variant": "#e1e2ed",
+                        "inverse-surface": "#2e3039"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "8px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "container-max": "1280px",
+                        "3xl": "64px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "display": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #faf8ff;
+            font-family: 'Inter', sans-serif;
+            color: #191b23;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid #E2E8F0;
+        }
+        .circular-progress {
+            background: conic-gradient(#004ac6 var(--progress), #e1e2ed 0deg);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface mb-24 md:mb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-lg h-16 bg-surface dark:bg-background border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young male professional in a smart-casual blazer, smiling confidently against a soft, out-of-focus modern office background. The lighting is warm and natural, creating a high-trust and approachable persona consistent with a corporate-modern professional design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk4WcWA_vX_v5P73hZJ5AzhicLjO020Bh2ncVLHdGTdgKJqOZ8QMksXK1PlBl2be7IFWOULD2kUdhaVGtVg2Fj7ish4dGBHWDHiCSbUsFve-xRlRGHaGzDzHWxCpkYe0gPmKYzmRDPf9CTW4N5SGECpLeH95C8t-AzO0QpwxL9bJisFofxjzeObcFSC3Fz36hCgqOBKhLuww8i0vOLOL5qLzu4NmlpGB6Y5qsQQn6yI88U79sGLnmzP4Vw4wAjvzcqK19WVg8X5H9K"/>
+</div>
+<span class="text-headline-sm font-headline-sm font-bold text-primary dark:text-primary-fixed-dim">SkillBridge AI</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+</div>
+</header>
+<main class="mt-16 max-w-container-max mx-auto px-lg py-xl flex flex-col gap-xl">
+<!-- Welcome Card & Bento Layout Start -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Welcome Section -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<section class="glass-card rounded-xl p-lg flex flex-col md:flex-row justify-between items-center relative overflow-hidden">
+<div class="z-10 text-center md:text-left">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Welcome back, Alex!</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">You're 85% ready for your next career milestone. Complete today's AI-curated modules to bridge the gap.</p>
+<button class="mt-lg px-lg py-md bg-primary text-on-primary rounded-lg font-label-md hover:bg-primary-fixed-dim transition-all active:scale-95">
+                            Continue Learning
+                        </button>
+</div>
+<div class="hidden md:block w-48 h-48 float-animation">
+
+</div>
+</section>
+<!-- Weekly Progress & Skill Progress -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Weekly Activity -->
+<div class="glass-card rounded-xl p-lg">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-sm text-headline-sm">Weekly Progress</h3>
+<span class="text-label-sm font-label-sm text-primary">12.5 hrs this week</span>
+</div>
+<div class="flex items-end justify-between h-32 gap-xs">
+<div class="w-full bg-primary-fixed rounded-t-sm h-1/2"></div>
+<div class="w-full bg-primary-fixed rounded-t-sm h-3/4"></div>
+<div class="w-full bg-primary-fixed rounded-t-sm h-1/3"></div>
+<div class="w-full bg-primary rounded-t-sm h-full"></div>
+<div class="w-full bg-primary-fixed rounded-t-sm h-2/3"></div>
+<div class="w-full bg-primary-fixed rounded-t-sm h-1/2"></div>
+<div class="w-full bg-primary-fixed rounded-t-sm h-1/4"></div>
+</div>
+<div class="flex justify-between mt-sm">
+<span class="text-label-sm font-label-sm text-outline">M</span>
+<span class="text-label-sm font-label-sm text-outline">T</span>
+<span class="text-label-sm font-label-sm text-outline">W</span>
+<span class="text-label-sm font-label-sm text-primary font-bold">T</span>
+<span class="text-label-sm font-label-sm text-outline">F</span>
+<span class="text-label-sm font-label-sm text-outline">S</span>
+<span class="text-label-sm font-label-sm text-outline">S</span>
+</div>
+</div>
+<!-- Skill Progress -->
+<div class="glass-card rounded-xl p-lg">
+<h3 class="font-headline-sm text-headline-sm mb-md">Skill Matrix</h3>
+<div class="flex flex-col gap-md">
+<div>
+<div class="flex justify-between mb-xs">
+<span class="font-label-md text-label-md">Strategic Leadership</span>
+<span class="font-label-sm text-label-sm text-primary">92%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-primary h-full rounded-full w-[92%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-xs">
+<span class="font-label-md text-label-md">Data Analytics</span>
+<span class="font-label-sm text-label-sm text-primary">78%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-primary h-full rounded-full w-[78%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-xs">
+<span class="font-label-md text-label-md">Product Strategy</span>
+<span class="font-label-sm text-label-sm text-primary">64%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-primary h-full rounded-full w-[64%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Job Readiness Score Sidebar -->
+<div class="lg:col-span-4 flex flex-col gap-lg">
+<section class="glass-card rounded-xl p-lg flex flex-col items-center text-center">
+<h3 class="font-headline-sm text-headline-sm mb-lg">Job Readiness Score</h3>
+<div class="relative w-48 h-48 flex items-center justify-center">
+<div class="circular-progress w-full h-full rounded-full" style="--progress: 306deg;"></div>
+<div class="absolute inset-4 bg-surface rounded-full flex flex-col items-center justify-center">
+<span class="text-display font-display text-primary">85</span>
+<span class="text-label-md font-label-md text-outline">VERY HIGH</span>
+</div>
+</div>
+<div class="mt-lg p-md bg-primary-fixed rounded-lg w-full">
+<div class="flex items-center gap-sm text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="font-label-md text-label-md">+4% vs last week</span>
+</div>
+</div>
+<p class="mt-md text-body-sm font-body-sm text-on-surface-variant">Your profile is currently outperforming 92% of peers in the Senior Product Management sector.</p>
+</section>
+<div class="glass-card rounded-xl p-lg">
+<h3 class="font-label-md text-label-md text-outline mb-md uppercase tracking-wider">Quick Actions</h3>
+<div class="flex flex-col gap-sm">
+<button class="flex items-center gap-md p-md rounded-lg hover:bg-surface-container-low transition-colors group">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="text-left">
+<p class="font-label-md text-label-md">Update Resume</p>
+<p class="text-xs text-on-surface-variant">Last updated 2 days ago</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="flex items-center gap-md p-md rounded-lg hover:bg-surface-container-low transition-colors group">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<div class="text-left">
+<p class="font-label-md text-label-md">Goal Settings</p>
+<p class="text-xs text-on-surface-variant">Define your career path</p>
+</div>
+<span class="material-symbols-outlined ml-auto text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Recommended Learning -->
+<section>
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-headline-md text-headline-md">Recommended Learning</h2>
+<button class="text-primary font-label-md flex items-center gap-xs hover:underline">
+                    View all modules <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Course Card 1 -->
+<div class="glass-card rounded-xl overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
+<div class="h-40 relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A clean, minimalist 3D abstract visualization of data nodes and connecting lines in professional blue and white tones. The lighting is crisp, and the composition is airy, representing modern data structures and AI logic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuChA_3W2kpb1LD5g4wZK5MpZyuFJszinbr8lpMZSK9pVaBX-xvdAuRBoD2u5NsnM1N7eT-GZR4-uh1W_7IoUuiBqa542WBG0T_yM19koQTOJA-XCfDqqBj2m5pynpivIs2U5yLPjZTuKhEFMEvMk6-2TpnrEA1nJrUb98PSg10ydSzIWIuM_sUTBBLs0OlBYTcwWARhcX0DJWwDuEDQZ6OTIXNG2ydX9N-gqg-XvkNLIeGx9TqDlmVeT43GBkyFBHllYyX6qY79SdqQ')"></div>
+<div class="absolute top-md left-md bg-surface/90 backdrop-blur-sm px-sm py-xs rounded-full flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm text-primary">timer</span>
+<span class="text-label-sm font-label-sm text-on-surface">45 min</span>
+</div>
+</div>
+<div class="p-lg">
+<span class="px-sm py-xs rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm font-label-sm mb-sm inline-block">AI Fundamentals</span>
+<h4 class="font-headline-sm text-headline-sm mb-sm group-hover:text-primary transition-colors">Advanced LLM Orchestration for PMs</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-2">Learn to leverage large language models to automate market research and competitive analysis.</p>
+</div>
+</div></div></section>
+<!-- Course Card 2 -->
+<div class="glass-card rounded-xl overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
+<div class="h-40 relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A macro photograph of an architectural model with clean geometric lines, light-colored wood, and frosted glass. The image is bright and professional, symbolizing high-level structural planning and strategic leadership." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqrm1W7ac4ASjZRqhCl_oxemUnF7uk2O5mybFCOKwscniqdBjgReJq4TUz-sp4-HluZvTYzUk2odDszYj-9O3EM30apts7yNb32p268ihTOrXqYv_yjyqr0VkqiFVjZ5xcbCfavFww0vUq8PKMiI4jnhKsAGE0386JTmTCyex8r9-rMDrW8H_KXSmGSF0c-o-IFM--yHgACIKSAb5S9qwOmZd7WoHZM0jwXF2y9iYR-BvQB0t13_eBgxWQQ5Sx6bI3SlP1lOIyaRjx')"></div>
+<div class="absolute top-md left-md bg-surface/90 backdrop-blur-sm px-sm py-xs rounded-full flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm text-primary">timer</span>
+<span class="text-label-sm font-label-sm text-on-surface">1.5 hrs</span>
+</div>
+</div>
+<div class="p-lg">
+<span class="px-sm py-xs rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-label-sm font-label-sm mb-sm inline-block">Leadership</span>
+<h4 class="font-headline-sm text-headline-sm mb-sm group-hover:text-primary transition-colors">Strategic Decision Making in Tech</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-2">Master the frameworks used by top CEOs to navigate complex technological shifts and market volatility.</p>
+</div>
+</div>
+<!-- Course Card 3 -->
+<div class="glass-card rounded-xl overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
+<div class="h-40 relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A vibrant, clean digital illustration showing colorful bar charts and growth arrows on a neutral, high-key background. The style is polished and executive, representing data analytics and professional growth metrics." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNyaArYvGqrg6_r0w3xxoAnHsiwNalgTw_g-S9BqSKt2TlWB6N6Kf97w6wYtRtA5YUjOILat0q8Vqk4u8PgbQDyu5UjXFE_gCCjP_AFkJJU1m7Rv5kwxgmY5mrZIiPDXUibUrpGdZHqlT5a4NXLvkd0v_90UJEJk2OfoVT5MGw9p1MjQ5T1pD__-HEa1BmS00tOeP1M7ouMhJcqXdsvrePpsxbjIyuqUbtjLp_pRgCjkiypvERO3pD4aUDMjCdQkADZF4BMWiNPwXj')"></div>
+<div class="absolute top-md left-md bg-surface/90 backdrop-blur-sm px-sm py-xs rounded-full flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm text-primary">timer</span>
+<span class="text-label-sm font-label-sm text-on-surface">30 min</span>
+</div>
+</div>
+<div class="p-lg">
+<span class="px-sm py-xs rounded-full bg-secondary-fixed text-on-secondary-fixed-variant text-label-sm font-label-sm mb-sm inline-block">Analytics</span>
+<h4 class="font-headline-sm text-headline-sm mb-sm group-hover:text-primary transition-colors">Predictive Analytics for Product Managers</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-2">Utilizing user behavior data to forecast feature adoption and long-term retention rates.</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-sm py-2 pb-safe bg-surface dark:bg-background border-t border-outline-variant dark:border-outline shadow-md md:hidden">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-label-sm font-label-sm">Skills</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-label-sm font-label-sm">Coach</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-label-sm font-label-sm">Analytics</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Desktop Navigation (Integrated in AppBar or Sidebar depending on layout rules) -->
+<script>
+        // Micro-interaction for the job readiness score
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressCircle = document.querySelector('.circular-progress');
+            if (progressCircle) {
+                let progress = 0;
+                const targetProgress = 306; // Represents 85% of 360deg
+                const interval = setInterval(() => {
+                    if (progress >= targetProgress) {
+                        clearInterval(interval);
+                    } else {
+                        progress += 3;
+                        progressCircle.style.setProperty('--progress', `${progress}deg`);
+                    }
+                }, 10);
+            }
+        });
+    </script>
+</body></html>
