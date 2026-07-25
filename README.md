@@ -250,7 +250,7 @@ src/
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/SkillBridge-AI.git
+git clone https://github.com/codebyzara-devs/SkillBridge-AI.git
 ```
 
 Go to the project folder
