@@ -40,8 +40,7 @@ The platform makes career counselling accessible, fast, and personalised.
 # 🌐 Live Demo
 
 **Live Application**
-
-[https://YOUR-VERCEL-LINK.vercel.app[](https://ai-builder-topaz-theta.vercel.app/)
+(https://stitch-skillbridge-ai-platform.vercel.app/)
 
 
 # 💻 GitHub Repository
@@ -226,13 +225,13 @@ src/
 # 📸 Screenshots
 
 ## Home Page
-
 <img width="1732" height="650" alt="image" src="https://github.com/user-attachments/assets/334e4f8e-c4fd-40ab-8960-f75db2857842" />
 
 ---
 
 ## Dashboard
-<img width="1751" height="556" alt="image" src="https://github.com/user-attachments/assets/aab816ed-42fa-4228-ba7f-97a76eb634ca" />
+<img width="1551" height="860" alt="image" src="https://github.com/user-attachments/assets/13e45e16-20f3-4869-815f-ae061dbb8297" />
+
 
 
 ---
@@ -240,9 +239,7 @@ src/
 ## AI Career Analysis
 
 (Add Screenshot Here)
-<img width="1484" height="637" alt="image" src="https://github.com/user-attachments/assets/05465251-8e7c-4c4c-bd28-f932d80cacc4" />
-
----
+<img width="1911" height="989" alt="image" src="https://github.com/user-attachments/assets/36b16ffd-97a4-439e-98f3-1d98018d97a7" />
 
 
 # ⚙️ Installation
